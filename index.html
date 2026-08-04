@@ -3,608 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Churchill's Boxing Gym — We Will Never Surrender</title>
-<meta name="description" content="Churchill's Boxing Gym, London. World-class coaches, elite facilities, and a culture where everyone is welcome. Pro and amateur boxing, fitness, and box-fit since 2018.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Archivo+Expanded:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Churchill's Boxing Gym — Before &amp; New Design</title>
+<meta name="description" content="Side-by-side review of the Churchill's Boxing Gym website: the original site and the new design.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <style>
   :root{
-    --paper:#f4f2ee;     /* warm off-white */
-    --mist:#e8e5df;      /* soft greige panel */
-    --fog:#dcd8d0;       /* deeper fill / hover */
-    --ink:#2f3338;       /* soft charcoal text (not pure black) */
-    --slate:#5a5f66;     /* muted body text */
-    --slate-dim:#878d93; /* captions */
-    --sage:#7f8c85;      /* muted desaturated sage — quiet accent */
-    --sage-2:#6d7a72;    /* slightly deeper sage for hover */
-    --clay:#a4937e;      /* warm taupe detail */
+    --paper:#f4f2ee;
+    --mist:#e8e5df;
+    --ink:#2f3338;
+    --slate:#5a5f66;
+    --sage:#7f8c85;
+    --sage-2:#6d7a72;
+    --clay:#a4937e;
     --line:rgba(47,51,56,.13);
-    --line-soft:rgba(47,51,56,.08);
-    --maxw:1240px;
+    --bar-h:56px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html,body{height:100%}
   body{
     margin:0;background:var(--paper);color:var(--ink);
-    font-family:"Archivo",system-ui,sans-serif;
-    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    font-family:"Archivo",system-ui,sans-serif;font-size:15px;
+    display:flex;flex-direction:column;
   }
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  h1,h2,h3{margin:0;font-weight:400;line-height:.92;letter-spacing:-.01em}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .eyebrow{
-    font-family:"Archivo Expanded","Archivo",sans-serif;font-weight:700;
-    text-transform:uppercase;letter-spacing:.34em;font-size:12px;color:var(--sage-2);
+  .bar{
+    height:var(--bar-h);flex:0 0 auto;display:flex;align-items:center;gap:18px;
+    padding:0 18px;background:var(--paper);border-bottom:1px solid var(--line);
   }
-
-  /* ---------- NAV (solid bar, like original) ---------- */
-  header.nav{
-    position:fixed;top:0;left:0;right:0;z-index:60;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 28px;
-    background:rgba(244,242,238,.92);backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line);
-    transition:box-shadow .35s,padding .35s;
+  .bar .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .bar .brand img{height:34px;width:auto}
+  .bar .brand span{
+    font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--slate);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
-  header.nav.scrolled{box-shadow:0 6px 24px -18px rgba(0,0,0,.35);padding:9px 28px}
-  .brand{display:flex;align-items:center;gap:13px;z-index:61}
-  .brand img{height:48px;width:auto}
-  .brand .bt{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:16px;letter-spacing:.06em;line-height:.95;color:var(--ink)}
-  .brand .bt small{display:block;font-family:"Archivo Expanded";font-weight:700;font-size:8.5px;letter-spacing:.34em;color:var(--clay);margin-top:3px}
-  nav.links{display:flex;align-items:center;gap:30px}
-  nav.links a{
-    font-family:"Archivo Expanded","Archivo",sans-serif;font-weight:700;text-transform:uppercase;
-    font-size:12.5px;letter-spacing:.13em;color:var(--slate);transition:color .2s;position:relative;
+  .tabs{display:flex;gap:6px;margin-left:auto}
+  .tab{
+    appearance:none;border:1px solid var(--line);background:var(--mist);color:var(--slate);
+    font:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;
+    padding:10px 18px;border-radius:4px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;
   }
-  nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--sage);transition:width .25s}
-  nav.links a:hover{color:var(--ink)}
-  nav.links a:hover::after{width:100%}
-  .nav-cta{
-    background:var(--sage);color:#fff !important;padding:11px 20px;border-radius:3px;
-    font-family:"Archivo Expanded";font-weight:800;letter-spacing:.1em;font-size:12px;
-    transition:background .2s,transform .15s;
+  .tab:hover{color:var(--ink)}
+  .tab[aria-selected="true"]{background:var(--sage);border-color:var(--sage);color:#fff}
+  .open-link{
+    margin-left:6px;display:inline-flex;align-items:center;gap:6px;
+    color:var(--clay);text-decoration:none;font-weight:700;font-size:11.5px;
+    text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;
   }
-  .nav-cta:hover{background:var(--sage-2);transform:translateY(-1px)}
-  .nav-cta::after{display:none}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;z-index:61;padding:6px}
-  .burger span{width:26px;height:2px;background:var(--ink);transition:.3s}
-
-  /* ---------- HERO: video at top under nav, like original ---------- */
-  .hero{position:relative;margin-top:72px;width:100%;height:78vh;min-height:520px;max-height:860px;overflow:hidden;background:#0e1011}
-  .hero video,.hero .fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero .hero-video{z-index:1}
-  .hero .fallback{z-index:0}
-  .hero .fallback{background:radial-gradient(120% 120% at 70% 10%,#2c2f31 0%,#0e1011 60%)}
-  .hero::after{
-    content:"";position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(14,16,17,.34) 0%,rgba(14,16,17,.12) 30%,rgba(14,16,17,.12) 60%,rgba(14,16,17,.46) 100%),radial-gradient(120% 80% at 50% 50%,rgba(14,16,17,.42) 0%,rgba(14,16,17,.12) 60%,rgba(14,16,17,0) 100%);
+  .open-link:hover{color:var(--sage-2)}
+  .views{flex:1 1 auto;position:relative;background:#fff}
+  .views iframe{
+    position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#fff;
   }
-  .hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;opacity:0;animation:heroFade 1s ease 2.5s forwards}
-  @keyframes heroFade{from{opacity:0}to{opacity:1}}
-  .hero .est{display:inline-flex;align-items:center;gap:14px;margin-bottom:14px;justify-content:center}
-  .hero .est .rule{height:1px;width:48px;background:rgba(255,255,255,.7)}
-  .hero .est .eyebrow{color:rgba(255,255,255,.88)}
-  /* consistent single-colour, tight condensed display type */
-  .hero h1{
-    font-family:"Anton",sans-serif;text-transform:uppercase;color:#f4f2ee;
-    font-size:clamp(2.8rem,9.5vw,8.2rem);line-height:.86;letter-spacing:.005em;
-    text-shadow:0 4px 28px rgba(0,0,0,.45);
-  }
-  .hero h1 span{display:block}
-  .scroll-cue{position:absolute;left:28px;bottom:20px;z-index:3;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.78);font-family:"Archivo Expanded";font-weight:700;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase}
-  .scroll-cue .dot{width:7px;height:7px;border-radius:50%;background:#cfd6d1;animation:pulse 1.8s infinite}
-  @keyframes pulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
-
-  /* ---------- INTRO STRIP (the world-class coaches copy) ---------- */
-  .intro{background:var(--paper);border-bottom:1px solid var(--line)}
-  .intro .wrap{padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,70px);align-items:start}
-  .intro .tag{font-family:"Anton";text-transform:uppercase;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--ink);line-height:.95;white-space:nowrap}
-  .intro .tag em{font-style:normal;color:var(--sage-2);display:block}
-  .intro p{margin:0;font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--slate);max-width:760px}
-
-  /* ---------- MARQUEE ---------- */
-  .marquee{background:var(--mist);color:var(--ink);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0}
-  .marquee .track{display:flex;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
-  .marquee:hover .track{animation-play-state:paused}
-  .marquee span{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.4rem;letter-spacing:.05em;padding:0 26px;display:inline-flex;align-items:center;gap:26px;color:var(--slate)}
-  .marquee span::after{content:"✦";color:var(--clay);font-size:.62em}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-
-  /* ---------- SECTIONS ---------- */
-  section{position:relative}
-  .pad{padding:clamp(70px,10vw,140px) 0}
-  .round-tag{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
-  .round-tag .r{font-family:"Anton";font-size:1.05rem;color:var(--sage-2);letter-spacing:.08em}
-  .round-tag .r span{color:var(--slate-dim)}
-  .round-tag h2{font-family:"Anton";text-transform:uppercase;font-size:clamp(2.1rem,5.4vw,4.4rem);color:var(--ink)}
-
-  /* ---------- VICTORY ---------- */
-  .victory{background:var(--paper)}
-  .victory-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,90px);align-items:center}
-  .victory-grid .copy p{color:var(--slate);font-size:1.08rem;margin:0 0 22px}
-  .victory-grid .copy .big{color:var(--ink);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:600;line-height:1.25;margin-bottom:26px}
-  .media-stack{position:relative}
-  .media-stack img{border-radius:6px;border:1px solid var(--line);box-shadow:0 28px 56px -36px rgba(47,51,56,.4)}
-  .media-stack .punch{
-    position:absolute;right:-22px;top:-46px;width:118px;height:auto;border:0;box-shadow:none;
-    filter:drop-shadow(0 12px 22px rgba(47,51,56,.3)) saturate(.55);animation:bob 4.5s ease-in-out infinite;
-  }
-  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
-  .stat-row{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
-  .stat{flex:1;min-width:120px;border:1px solid var(--line);border-radius:6px;padding:18px 20px;background:var(--mist)}
-  .stat b{font-family:"Anton";font-size:2.3rem;display:block;line-height:1;color:var(--ink)}
-  .stat b em{font-style:normal;color:var(--sage-2)}
-  .stat small{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--clay)}
-
-  /* ---------- CLASSES ---------- */
-  .classes{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .class-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper)}
-  .class-card{
-    position:relative;padding:36px 26px 30px;background:var(--paper);border-right:1px solid var(--line);
-    transition:background .3s;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;
-  }
-  .class-card:last-child{border-right:0}
-  .class-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--sage);transition:width .35s}
-  .class-card:hover{background:var(--fog)}
-  .class-card:hover::before{width:100%}
-  .class-card .num{font-family:"Anton";font-size:1rem;color:var(--slate-dim);letter-spacing:.1em}
-  .class-card h3{font-family:"Anton";text-transform:uppercase;font-size:1.85rem;margin:18px 0 12px;line-height:.95;color:var(--ink)}
-  .class-card p{color:var(--slate);font-size:.96rem;margin:0}
-  .class-card .tag{margin-top:18px;font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:var(--clay)}
-
-  /* ---------- COACHES ---------- */
-  .coaches{background:var(--paper)}
-  .coach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-  .coach{border:1px solid var(--line);border-radius:7px;padding:26px 24px;background:var(--mist);transition:transform .25s,border-color .25s,box-shadow .25s}
-  .coach:hover{transform:translateY(-4px);border-color:rgba(127,140,133,.55);box-shadow:0 18px 36px -28px rgba(47,51,56,.45)}
-  .coach .role{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--sage-2);margin-bottom:10px}
-  .coach h3{font-family:"Anton";text-transform:uppercase;font-size:1.5rem;line-height:.95;margin-bottom:8px;color:var(--ink)}
-  .coach p{color:var(--slate);font-size:.92rem;margin:0}
-  .coach .accolade{margin-top:10px;color:var(--clay);font-size:.86rem;font-weight:600}
-
-  /* ---------- FEATURE ---------- */
-  .feature{background:var(--mist);border-top:1px solid var(--line)}
-  .feature-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-  .feature-cell{padding:clamp(34px,5vw,60px);display:flex;flex-direction:column;justify-content:center;gap:18px;background:var(--paper)}
-  .feature-cell.light{background:var(--mist)}
-  .feature-cell.accent-cell{background:linear-gradient(150deg,#7f8c85,#525c56);color:#fff}
-  .feature-cell h3{font-family:"Anton";text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,3rem);line-height:.92;color:var(--ink)}
-  .feature-cell.accent-cell h3{color:#fff}
-  .feature-cell p{font-size:1.04rem;margin:0;color:var(--slate)}
-  .feature-cell.accent-cell p{color:#e6eae7}
-  .feature-cell .vid{border-radius:6px;overflow:hidden;border:1px solid var(--line);aspect-ratio:9/12;background:#000}
-  .feature-cell .vid video{width:100%;height:100%;object-fit:cover}
-
-  /* ---------- click-to-unmute ---------- */
-  .snd-wrap{position:relative;cursor:pointer}
-  .snd-wrap>video{display:block}
-  .snd-btn{
-    position:absolute;bottom:12px;right:12px;z-index:4;
-    width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
-    display:grid;place-items:center;
-    background:rgba(20,22,24,.55);backdrop-filter:blur(6px);
-    color:#fff;transition:background .2s,transform .15s,opacity .3s;
-  }
-  .snd-wrap:hover .snd-btn{background:rgba(20,22,24,.8)}
-  .snd-btn:hover{transform:scale(1.08)}
-  .snd-btn svg{width:19px;height:19px;display:block;fill:currentColor}
-  .snd-btn .on{display:none}
-  .snd-wrap.unmuted .snd-btn .on{display:block}
-  .snd-wrap.unmuted .snd-btn .off{display:none}
-  /* hero speaker sits a touch higher-left of the scroll cue */
-  .hero .snd-btn{bottom:18px;right:22px;background:rgba(20,22,24,.45)}
-  .phone-cta{display:inline-flex;align-items:center;gap:12px;font-family:"Anton";font-size:1.7rem;letter-spacing:.03em;color:#fff}
-  .phone-cta .ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.1rem}
-  .feature-cell.accent-cell .eyebrow{color:#dfe5e1}
-
-  /* ---------- CONTACT ---------- */
-  .contact{background:var(--paper);border-top:1px solid var(--line)}
-  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,80px)}
-  .info-block{margin-bottom:30px}
-  .info-block .lbl{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--sage-2);margin-bottom:10px}
-  .info-block p{margin:0;font-size:1.12rem;line-height:1.5;color:var(--slate)}
-  .info-block strong{font-family:"Anton";font-weight:400;font-size:1.35rem;letter-spacing:.02em;display:block;margin-bottom:4px;color:var(--ink)}
-  .hours-line{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:11px 0;max-width:360px}
-  .hours-line span:first-child{color:var(--slate-dim)}
-  .hours-line span:last-child{font-weight:700;color:var(--ink)}
-  .map-link{display:block;margin-top:24px;border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;transition:border-color .25s,box-shadow .25s}
-  .map-link:hover{border-color:var(--sage);box-shadow:0 18px 36px -26px rgba(47,51,56,.5)}
-  .map-link img{width:100%;height:auto}
-  .map-link .pin{position:absolute;inset:0;display:grid;place-items:center;background:rgba(47,51,56,.1)}
-  .map-link .pin span{background:var(--sage);color:#fff;padding:10px 18px;border-radius:4px;font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;box-shadow:0 8px 24px rgba(47,51,56,.4)}
-
-  form{display:flex;flex-direction:column;gap:16px}
-  form .field label{display:block;font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;color:var(--slate-dim);margin-bottom:7px}
-  form input,form textarea{
-    width:100%;background:var(--paper);border:1px solid var(--line);border-radius:5px;color:var(--ink);
-    padding:14px 16px;font-family:"Archivo",sans-serif;font-size:1rem;transition:border-color .2s,background .2s,box-shadow .2s;
-  }
-  form input::placeholder,form textarea::placeholder{color:#a7adb2}
-  form input:focus,form textarea:focus{outline:none;border-color:var(--sage);background:#fff;box-shadow:0 0 0 3px rgba(127,140,133,.16)}
-  form textarea{resize:vertical;min-height:130px}
-  .form-card{background:var(--mist);border:1px solid var(--line);border-radius:10px;padding:clamp(26px,4vw,40px);box-shadow:0 28px 56px -42px rgba(47,51,56,.4)}
-  .form-note{font-size:.95rem;color:var(--slate);margin:0 0 22px}
-
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:0;
-    font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.1em;
-    font-size:13.5px;padding:16px 30px;border-radius:3px;transition:transform .15s,background .2s,color .2s,border-color .2s,box-shadow .2s;
-  }
-  .btn-primary{background:var(--sage);color:#fff;box-shadow:0 10px 22px -12px rgba(127,140,133,.7)}
-  .btn-primary:hover{background:var(--sage-2);transform:translateY(-2px)}
-  .btn .arr{transition:transform .2s}
-  .btn:hover .arr{transform:translateX(4px)}
-
-  /* ---------- FOOTER ---------- */
-  footer.site{background:var(--ink);color:#e7e5e0;border-top:1px solid var(--line);padding:60px 0 34px}
-  .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
-  .foot-brand{display:flex;align-items:center;gap:14px}
-  .foot-brand img{height:64px;filter:brightness(0) invert(1) opacity(.9)}
-  .foot-brand .ft{font-family:"Anton";text-transform:uppercase;font-size:1.3rem;line-height:.95;color:#fff}
-  .foot-brand .ft small{display:block;font-family:"Archivo Expanded";font-weight:700;font-size:9px;letter-spacing:.3em;color:var(--clay);margin-top:5px}
-  .foot-links{display:flex;gap:46px;flex-wrap:wrap}
-  .foot-col h4{font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--clay);margin:0 0 14px}
-  .foot-col a,.foot-col p{display:block;color:#aeb2b4;font-size:.95rem;margin:0 0 9px;transition:color .2s}
-  .foot-col a:hover{color:#fff}
-  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);color:#9499a0;font-size:.84rem}
-  .foot-bottom .insta a{color:#b6c0ba;font-weight:600}
-
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:980px){
-    .victory-grid,.contact-grid{grid-template-columns:1fr}
-    .intro .wrap{grid-template-columns:1fr;gap:18px}
-    .intro .tag{white-space:normal}
-    .class-grid{grid-template-columns:repeat(2,1fr)}
-    .class-card:nth-child(2){border-right:0}
-    .class-card{border-bottom:1px solid var(--line)}
-    .feature-grid{grid-template-columns:1fr}
-    .feature-cell .vid{max-width:320px;margin:0 auto}
-    .media-stack{margin-top:30px}
-  }
-  @media(max-width:720px){
-    .hero{margin-top:66px;height:auto;min-height:70vh;max-height:none}
-    nav.links{
-      position:fixed;inset:0;background:rgba(244,242,238,.98);backdrop-filter:blur(8px);
-      flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
-    }
-    nav.links.open{transform:translateX(0)}
-    nav.links a{font-size:1.4rem;color:var(--ink)}
-    .nav-cta{font-size:1rem;padding:14px 26px;color:#fff !important}
-    .burger{display:flex}
-    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .burger.open span:nth-child(2){opacity:0}
-    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .class-grid{grid-template-columns:1fr}
-    .class-card{border-right:0}
-    .stat{min-width:100%}
-    .scroll-cue{display:none}
-    .media-stack .punch{width:84px;right:-6px;top:-34px}
+  .views iframe.active{display:block}
+  @media(max-width:640px){
+    .bar{gap:10px;padding:0 12px}
+    .bar .brand span{display:none}
+    .open-link span{display:none}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Churchill's Boxing Gym home">
+<header class="bar">
+  <div class="brand">
     <img src="logo.svg" alt="Churchill's Boxing Gym logo">
-    <span class="bt">Churchill's<small>Boxing Gym</small></span>
-  </a>
-  <nav class="links" id="navlinks">
-    <a href="#gym">Our Gym</a>
-    <a href="#classes">Classes</a>
-    <a href="#coaches">Coaches</a>
-    <a href="#venue">Venue Hire</a>
-    <a href="#contact">Visit Us</a>
-    <a href="#contact" class="nav-cta">Start Training</a>
+    <span>Churchill's Boxing Gym · Site Review</span>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Site versions">
+    <button class="tab" id="tab-before" role="tab" aria-selected="false" aria-controls="view-before">Before</button>
+    <button class="tab" id="tab-new" role="tab" aria-selected="true" aria-controls="view-new">New Design</button>
   </nav>
-  <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <a class="open-link" id="openLink" href="new-design.html" target="_blank" rel="noopener">↗ <span>Open in its own tab</span></a>
 </header>
 
-<!-- HERO: video at top under nav, like the original -->
-<section class="hero" id="top">
-  <video class="hero-video snd" autoplay muted loop playsinline poster="">
-    <source src="update.mp4" type="video/mp4">
-    <source src="https://churchillsboxinggym.co.uk/wp-content/uploads/2024/11/update.mp4" type="video/mp4">
-  </video>
-  <div class="fallback" aria-hidden="true"></div>
-  <button class="snd-btn" type="button" aria-label="Toggle sound" title="Click for sound">
-    <svg class="off" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z" opacity=".9"/><path d="M19 5l-1.4 1.4a7 7 0 010 11.2L19 19a9 9 0 000-14z" opacity=".35"/><line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="2"/></svg>
-    <svg class="on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 7.5a4.5 4.5 0 010 9v-2a2.5 2.5 0 000-5v-2z"/><path d="M16 3.5a8.5 8.5 0 010 17v-2a6.5 6.5 0 000-13v-2z" opacity=".7"/></svg>
-  </button>
-  <div class="hero-inner">
-    <div class="wrap">
-      <div class="est">
-        <span class="eyebrow">Since 2018</span>
-        <span class="rule"></span>
-        <span class="eyebrow" style="color:rgba(255,255,255,.72)">London · SE11</span>
-      </div>
-      <h1><span>We Will</span><span>Never</span><span>Surrender</span></h1>
-    </div>
-  </div>
-  <div class="scroll-cue"><span class="dot"></span> Scroll · Round 1</div>
-</section>
-
-<!-- INTRO STRIP -->
-<section class="intro">
-  <div class="wrap">
-    <div class="tag reveal">It's All<em>About Victory</em></div>
-    <p class="reveal">With world-class coaches and a state-of-the-art facility, training at our boxing gym is a great way to reach the top. Here at Churchill's, we prime you to reach new heights of physical fitness and championship results through a combination of traditional and innovative boxing methods.</p>
-  </div>
-</section>
-
-<!-- MARQUEE (Home of Champions removed) -->
-<div class="marquee" aria-hidden="true">
-  <div class="track">
-    <span>Pro Boxing</span><span>Amateur Boxing</span><span>Fitness</span><span>Box-Fit</span><span>Personal Training</span>
-    <span>Pro Boxing</span><span>Amateur Boxing</span><span>Fitness</span><span>Box-Fit</span><span>Personal Training</span>
-    <span>Pro Boxing</span><span>Amateur Boxing</span><span>Fitness</span><span>Box-Fit</span><span>Personal Training</span>
-  </div>
-</div>
-
-<!-- VICTORY -->
-<section class="victory pad" id="gym">
-  <div class="wrap">
-    <div class="round-tag reveal">
-      <span class="r">R<span>01</span></span>
-      <h2>Our Gym</h2>
-    </div>
-    <div class="victory-grid">
-      <div class="copy reveal">
-        <p class="big">Finally — a boxing gym culture where everyone is welcome.</p>
-        <p>At Churchill's, being a boxer means more than throwing punches. It's discipline, determination, and belonging to a supportive community. No matter your background, fitness level, or experience, you'll find a home here. We pride ourselves on a culture where respect and encouragement sit at the heart of everything we do.</p>
-        <p>We offer a full range of group classes — from light combat and sparring for beginners to simulated ring fights for advanced fighters. Prefer to go solo? Our one-to-one programs come tailored to your goals, complete with a personalised nutrition plan.</p>
-        <div class="stat-row">
-          <div class="stat"><b><em>7</em>+</b><small>Years Building Fighters</small></div>
-          <div class="stat"><b>5</b><small>Pro & Title Coaches</small></div>
-          <div class="stat"><b>All</b><small>Levels Welcome</small></div>
-        </div>
-      </div>
-      <div class="media-stack reveal">
-        <img src="https://churchillsboxinggym.co.uk/wp-content/uploads/2024/10/Screenshot-2024-10-06-at-11.22.06.png" alt="Inside Churchill's Boxing Gym">
-        <img class="punch" src="https://churchillsboxinggym.co.uk/wp-content/uploads/2024/12/punch.png" alt="Boxing glove">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CLASSES -->
-<section class="classes pad" id="classes">
-  <div class="wrap">
-    <div class="round-tag reveal">
-      <span class="r">R<span>02</span></span>
-      <h2>Popular Classes</h2>
-    </div>
-    <p class="reveal" style="max-width:640px;color:var(--slate);margin:-12px 0 38px">Everyone is welcome, whatever your level. Train at your own pace and grow with every session — we're with you every punch of the way.</p>
-    <div class="class-grid reveal">
-      <div class="class-card">
-        <span class="num">01</span>
-        <div><h3>Pro Boxing</h3><p>For those chasing a career in the ring. World-class coaching for fighters with the commitment and discipline to go all the way.</p></div>
-        <span class="tag">Elite · By Application</span>
-      </div>
-      <div class="class-card">
-        <span class="num">02</span>
-        <div><h3>Amateur Boxing</h3><p>Learn the craft properly — footwork, technique, and sparring — in a structured, supportive environment built for progress.</p></div>
-        <span class="tag">All Abilities</span>
-      </div>
-      <div class="class-card">
-        <span class="num">03</span>
-        <div><h3>Fitness</h3><p>One of the most effective cardio workouts there is. Burn calories, build endurance, and feel stronger with every round.</p></div>
-        <span class="tag">Weight Loss · Cardio</span>
-      </div>
-      <div class="class-card">
-        <span class="num">04</span>
-        <div><h3>Box-Fit</h3><p>A full-body workout combining power, precision, and core stability. Build lean, functional strength and real confidence.</p></div>
-        <span class="tag">Strength · Conditioning</span>
-      </div>
-    </div>
-    <div class="reveal" style="margin-top:32px">
-      <a href="#contact" class="btn btn-primary">Find Your Class <span class="arr">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- COACHES -->
-<section class="coaches pad" id="coaches">
-  <div class="wrap">
-    <div class="round-tag reveal">
-      <span class="r">R<span>03</span></span>
-      <h2>Train With The Best</h2>
-    </div>
-    <p class="reveal" style="max-width:680px;color:var(--slate);margin:-12px 0 40px">Train where the best are made. Our coaches bring years of professional and championship experience to every session.</p>
-    <div class="coach-grid reveal">
-      <div class="coach"><div class="role">Head Coach & Owner</div><h3>Samm Mullins</h3><p>Leads Churchill's. Call for pro enquiries: 07956 222 222.</p></div>
-      <div class="coach"><div class="role">Pro Boxer · Coach</div><h3>Harry Mullins</h3><p>Professional boxer and boxing coach.</p></div>
-      <div class="coach"><div class="role">Boxing Coach</div><h3>Obed Mbwakongo</h3><p>Boxing coach and former boxer.</p></div>
-      <div class="coach"><div class="role">Pro Boxer · Coach</div><h3>Johanna Wonyou</h3><p>Professional boxer.</p><p class="accolade">★ Commonwealth & European Bantamweight Champion</p></div>
-      <div class="coach"><div class="role">Boxing Coach</div><h3>Barry Healy</h3><p>Boxing coach.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE -->
-<section class="feature pad" id="venue">
-  <div class="wrap">
-    <div class="round-tag reveal">
-      <span class="r">R<span>04</span></span>
-      <h2>The Facility</h2>
-    </div>
-    <div class="feature-grid reveal">
-      <div class="feature-cell accent-cell">
-        <span class="eyebrow">New · Now Available</span>
-        <h3>Treatment Room For Hire</h3>
-        <p>Recovery and bodywork space, available to book directly. For enquiries, get in touch.</p>
-        <a href="tel:07956222222" class="phone-cta"><span class="ico">☎</span> 07956 222 222</a>
-      </div>
-      <div class="feature-cell light">
-        <div class="vid snd-wrap">
-          <video class="snd" autoplay muted loop playsinline>
-            <source src="https://churchillsboxinggym.co.uk/wp-content/uploads/2025/10/WhatsApp-Video-2025-10-04-at-09.58.04_448ca6ca.mp4" type="video/mp4">
-          </video>
-          <button class="snd-btn" type="button" aria-label="Toggle sound" title="Click for sound">
-            <svg class="off" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z" opacity=".9"/><line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="2"/></svg>
-            <svg class="on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 7.5a4.5 4.5 0 010 9v-2a2.5 2.5 0 000-5v-2z"/><path d="M16 3.5a8.5 8.5 0 010 17v-2a6.5 6.5 0 000-13v-2z" opacity=".7"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="feature-grid reveal" style="margin-top:18px">
-      <div class="feature-cell light">
-        <div class="vid snd-wrap" style="aspect-ratio:16/10">
-          <video class="snd" autoplay muted loop playsinline>
-            <source src="https://churchillsboxinggym.co.uk/wp-content/uploads/2024/12/upload.mp4" type="video/mp4">
-          </video>
-          <button class="snd-btn" type="button" aria-label="Toggle sound" title="Click for sound">
-            <svg class="off" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z" opacity=".9"/><line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="2"/></svg>
-            <svg class="on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 7.5a4.5 4.5 0 010 9v-2a2.5 2.5 0 000-5v-2z"/><path d="M16 3.5a8.5 8.5 0 010 17v-2a6.5 6.5 0 000-13v-2z" opacity=".7"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="feature-cell">
-        <span class="eyebrow">Venue Hire</span>
-        <h3>Hire The Gym</h3>
-        <p>Churchill's is available to hire and has hosted multiple photoshoots and TV tapings — including BBC Sport Relief. Tell us what you have in mind.</p>
-        <a href="#contact" class="btn btn-primary" style="align-self:flex-start">Enquire Now <span class="arr">→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact pad" id="contact">
-  <div class="wrap">
-    <div class="round-tag reveal"><span class="r">R<span>05</span></span><h2>Visit Us</h2></div>
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="info-block">
-          <div class="lbl">Address</div>
-          <p><strong>Churchill's Boxing Gym</strong>15 Newport Street, London<br>SE11 6AJ</p>
-        </div>
-        <div class="info-block">
-          <div class="lbl">Gym Hours</div>
-          <div class="hours-line"><span>Monday – Friday</span><span>7am – 11pm</span></div>
-          <div class="hours-line"><span>Saturday</span><span>8am – 10pm</span></div>
-          <div class="hours-line"><span>Sunday</span><span>8am – 9pm</span></div>
-        </div>
-        <div class="info-block">
-          <div class="lbl">Call</div>
-          <p><strong style="color:var(--sage-2)">07956 222 222</strong></p>
-        </div>
-        <a class="map-link" href="https://maps.google.com/?q=15+Newport+Street+London+SE11+6AJ" target="_blank" rel="noopener">
-          <img src="https://churchillsboxinggym.co.uk/wp-content/uploads/2025/01/map.png" alt="Map to Churchill's Boxing Gym, 15 Newport Street">
-          <span class="pin"><span>Open in Maps →</span></span>
-        </a>
-      </div>
-
-      <div class="reveal">
-        <div class="form-card">
-          <p class="form-note">Call us on 07956 222 222, or send a message and we'll get back to you.</p>
-          <form id="contactForm" novalidate>
-            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
-            <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
-            <div class="field"><label for="msg">Message</label><textarea id="msg" name="msg" placeholder="Which class are you interested in?" required></textarea></div>
-            <button type="submit" class="btn btn-primary" style="justify-content:center;width:100%">Send Message <span class="arr">→</span></button>
-            <p id="formStatus" style="margin:4px 0 0;font-size:.9rem;color:var(--clay);display:none"></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <img src="logo.svg" alt="Churchill's Boxing Gym logo">
-          <span class="ft">Churchill's<small>Boxing Gym · Est. 2018</small></span>
-        </div>
-        <p style="color:#aeb2b4;max-width:300px;margin:20px 0 0;font-size:.95rem">We will never surrender. Discipline, determination, and a community where everyone belongs.</p>
-      </div>
-      <div class="foot-links">
-        <div class="foot-col">
-          <h4>Explore</h4>
-          <a href="#gym">Our Gym</a><a href="#classes">Classes</a><a href="#coaches">Coaches</a><a href="#venue">Venue Hire</a><a href="#contact">Visit Us</a>
-        </div>
-        <div class="foot-col">
-          <h4>Visit</h4>
-          <p>15 Newport Street<br>London, SE11 6AJ</p><p>07956 222 222</p>
-        </div>
-        <div class="foot-col">
-          <h4>Follow</h4>
-          <a href="https://instagram.com/churchills_boxing" target="_blank" rel="noopener">@churchills_boxing</a>
-          <a href="https://instagram.com/samm_boxing" target="_blank" rel="noopener">@samm_boxing</a>
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2025 Churchill's Boxing Gym. All rights reserved.</span>
-      <span class="insta">London · SE11 6AJ · <a href="tel:07956222222">07956 222 222</a></span>
-    </div>
-  </div>
-</footer>
+<main class="views" id="views">
+  <iframe id="view-before" title="Original Churchill's Boxing Gym website"
+          data-src="https://churchillsboxinggym.co.uk/" loading="lazy"></iframe>
+  <iframe id="view-new" class="active" title="New Churchill's Boxing Gym design"
+          src="new-design.html"></iframe>
+</main>
 
 <script>
-  const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  const tabs={
+    before:{tab:document.getElementById('tab-before'),frame:document.getElementById('view-before'),href:'https://churchillsboxinggym.co.uk/'},
+    new:{tab:document.getElementById('tab-new'),frame:document.getElementById('view-new'),href:'new-design.html'}
+  };
+  const openLink=document.getElementById('openLink');
 
-  const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
-  burger.addEventListener('click',()=>{burger.classList.toggle('open');navlinks.classList.toggle('open')});
-  navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navlinks.classList.remove('open')}));
-
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  const form=document.getElementById('contactForm'),status=document.getElementById('formStatus');
-  form.addEventListener('submit',e=>{
-    e.preventDefault();
-    if(!form.checkValidity()){status.style.display='block';status.style.color='#b06a5e';status.textContent='Please fill in every field.';return}
-    status.style.display='block';status.style.color='var(--clay)';
-    status.textContent='Thanks — connect this form to email or WhatsApp to receive messages.';
-    form.reset();
-  });
-
-  // Click-to-unmute for all videos. Clicking one unmutes it and mutes the others (no overlapping audio).
-  (function(){
-    const vids=[...document.querySelectorAll('video.snd')];
-    function container(v){return v.classList.contains('hero-video')?v.closest('.hero'):v.closest('.snd-wrap')}
-    function setState(v,unmuted){
-      v.muted=!unmuted;
-      const c=container(v);
-      if(c) c.classList.toggle('unmuted',unmuted);
-      if(unmuted){v.play&&v.play().catch(()=>{});}
+  function activate(key,updateHash=true){
+    for(const k in tabs){
+      const on=k===key;
+      tabs[k].tab.setAttribute('aria-selected',on);
+      tabs[k].frame.classList.toggle('active',on);
     }
-    vids.forEach(v=>{
-      const c=container(v);if(!c)return;
-      const btn=c.querySelector('.snd-btn');
-      const toggle=e=>{
-        e.preventDefault();e.stopPropagation();
-        const willUnmute=v.muted;
-        if(willUnmute){vids.forEach(o=>{if(o!==v)setState(o,false);});}
-        setState(v,willUnmute);
-      };
-      btn&&btn.addEventListener('click',toggle);
-      // clicking the video area itself also toggles (feature videos only; hero click stays on the button)
-      if(!v.classList.contains('hero-video')) v.addEventListener('click',toggle);
-    });
+    // The original site is only loaded once the tab is first opened.
+    const f=tabs[key].frame;
+    if(f.dataset.src&&!f.src){f.src=f.dataset.src}
+    openLink.href=tabs[key].href;
+    if(updateHash)history.replaceState(null,'',key==='before'?'#before':'#new');
+  }
 
-    // Force playback on load — some browsers won't honour the autoplay attribute on their own.
-    function kick(){vids.forEach(v=>{v.muted=true;const p=v.play();if(p&&p.catch)p.catch(()=>{});});}
-    kick();
-    window.addEventListener('load',kick);
-    // one more nudge on first interaction, in case the browser held playback until a gesture
-    ['click','touchstart','keydown','scroll'].forEach(ev=>window.addEventListener(ev,function once(){kick();['click','touchstart','keydown','scroll'].forEach(e=>window.removeEventListener(e,once));},{passive:true}));
-  })();
+  tabs.before.tab.addEventListener('click',()=>activate('before'));
+  tabs.new.tab.addEventListener('click',()=>activate('new'));
 
+  activate(location.hash==='#before'?'before':'new',false);
 </script>
 </body>
 </html>
