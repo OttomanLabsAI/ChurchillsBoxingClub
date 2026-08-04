@@ -26,16 +26,19 @@
     display:flex;flex-direction:column;
   }
   .bar{
-    height:var(--bar-h);flex:0 0 auto;display:flex;align-items:center;gap:18px;
+    position:relative;height:var(--bar-h);flex:0 0 auto;display:flex;align-items:center;
+    justify-content:space-between;gap:18px;
     padding:0 18px;background:var(--paper);border-bottom:1px solid var(--line);
   }
-  .bar .brand{display:flex;align-items:center;gap:10px;min-width:0}
-  .bar .brand img{height:34px;width:auto}
+  .bar .brand{display:flex;align-items:center;min-width:0}
   .bar .brand span{
     font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--slate);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
-  .tabs{display:flex;gap:6px;margin-left:auto}
+  .tabs{
+    display:flex;gap:6px;
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  }
   .tab{
     appearance:none;border:1px solid var(--line);background:var(--mist);color:var(--slate);
     font:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;
@@ -65,18 +68,17 @@
 
 <header class="bar">
   <div class="brand">
-    <img src="logo.svg" alt="Churchill's Boxing Gym logo">
     <span>Churchill's Boxing Gym · Site Review</span>
   </div>
   <nav class="tabs" role="tablist" aria-label="Site versions">
-    <button class="tab" id="tab-before" role="tab" aria-selected="false" aria-controls="view-before">Before</button>
+    <button class="tab" id="tab-original" role="tab" aria-selected="false" aria-controls="view-original">Original</button>
     <button class="tab" id="tab-new" role="tab" aria-selected="true" aria-controls="view-new">New Design</button>
   </nav>
   <a class="open-link" id="openLink" href="new-design.html" target="_blank" rel="noopener">↗ <span>Open in its own tab</span></a>
 </header>
 
 <main class="views" id="views">
-  <iframe id="view-before" title="Original Churchill's Boxing Gym website"
+  <iframe id="view-original" title="Original Churchill's Boxing Gym website"
           data-src="https://churchillsboxinggym.co.uk/" loading="lazy"></iframe>
   <iframe id="view-new" class="active" title="New Churchill's Boxing Gym design"
           src="new-design.html"></iframe>
@@ -84,7 +86,7 @@
 
 <script>
   const tabs={
-    before:{tab:document.getElementById('tab-before'),frame:document.getElementById('view-before'),href:'https://churchillsboxinggym.co.uk/'},
+    original:{tab:document.getElementById('tab-original'),frame:document.getElementById('view-original'),href:'https://churchillsboxinggym.co.uk/'},
     new:{tab:document.getElementById('tab-new'),frame:document.getElementById('view-new'),href:'new-design.html'}
   };
   const openLink=document.getElementById('openLink');
@@ -99,13 +101,13 @@
     const f=tabs[key].frame;
     if(f.dataset.src&&!f.src){f.src=f.dataset.src}
     openLink.href=tabs[key].href;
-    if(updateHash)history.replaceState(null,'',key==='before'?'#before':'#new');
+    if(updateHash)history.replaceState(null,'',key==='original'?'#original':'#new');
   }
 
-  tabs.before.tab.addEventListener('click',()=>activate('before'));
+  tabs.original.tab.addEventListener('click',()=>activate('original'));
   tabs.new.tab.addEventListener('click',()=>activate('new'));
 
-  activate(location.hash==='#before'?'before':'new',false);
+  activate(location.hash==='#original'?'original':'new',false);
 </script>
 </body>
 </html>
