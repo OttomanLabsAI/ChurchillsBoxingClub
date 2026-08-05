@@ -269,8 +269,11 @@
   }
   @media(max-width:720px){
     .hero{margin-top:66px;height:auto;min-height:70vh;max-height:none}
+    /* backdrop-filter on the bar would make it the containing block for the
+       fixed-position menu, pinning the sheet inside the bar — so no blur here */
+    header.nav{backdrop-filter:none;background:rgba(244,242,238,.97)}
     nav.links{
-      position:fixed;inset:0;background:rgba(244,242,238,.98);backdrop-filter:blur(8px);
+      position:fixed;inset:0;background:var(--paper);
       flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
     }
     nav.links.open{transform:translateX(0)}
