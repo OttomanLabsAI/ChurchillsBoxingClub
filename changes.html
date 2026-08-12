@@ -37,7 +37,8 @@
   h1{font-size:clamp(2.1rem,6vw,4.2rem)}
   h2{font-size:clamp(1.7rem,4vw,2.6rem)}
 
-  .top{padding:clamp(48px,8vw,90px) 0 clamp(30px,5vw,50px);text-align:center}
+  /* top/bottom only — longhand so .wrap's side padding survives */
+  .top{padding-top:clamp(48px,8vw,90px);padding-bottom:clamp(30px,5vw,50px);text-align:center}
   .top .eyebrow{display:block;margin-bottom:14px}
   .top p{max-width:620px;margin:18px auto 0;color:var(--slate);font-size:1.1rem}
 
@@ -54,7 +55,7 @@
   }
   .glance p{margin:0;color:var(--slate);font-size:.95rem}
 
-  section.block{padding:clamp(44px,7vw,80px) 0 0}
+  section.block{padding-top:clamp(44px,7vw,80px)}
   .block .lead{color:var(--slate);max-width:640px;margin:14px 0 30px}
 
   /* before / after rows */
