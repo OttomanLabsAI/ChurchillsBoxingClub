@@ -4,8 +4,9 @@ The website for Churchill's Boxing Gym — 15 Newport Street, London, SE11 6AJ. 
 
 There is no build step: open `index.html` in a browser, or serve the repo root with any static file server.
 
-- `index.html` — review shell with two tabs: **Original** (the live site, embedded) and **New Design** (the redesign).
+- `index.html` — review shell with three tabs: **Original** (the live site, embedded), **New Design** (the redesign), and **What Changed** (the pitch).
 - `new-design.html` — the redesigned site itself, fully self-contained.
+- `changes.html` — a plain-English page explaining what the redesign changes and why, ending with the offer.
 - `Original` tab — embeds https://churchillsboxinggym.co.uk/ so the original is shown exactly as it stands today.
 - `logo.svg` — the gym's crest as vector artwork, used across the site.
 

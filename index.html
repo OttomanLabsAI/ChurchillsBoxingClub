@@ -61,6 +61,7 @@
     .bar{gap:10px;padding:0 12px}
     .bar .brand span{display:none}
     .open-link span{display:none}
+    .tab{padding:9px 10px;font-size:10px;letter-spacing:.08em;white-space:nowrap}
   }
 </style>
 </head>
@@ -73,6 +74,7 @@
   <nav class="tabs" role="tablist" aria-label="Site versions">
     <button class="tab" id="tab-original" role="tab" aria-selected="false" aria-controls="view-original">Original</button>
     <button class="tab" id="tab-new" role="tab" aria-selected="true" aria-controls="view-new">New Design</button>
+    <button class="tab" id="tab-changes" role="tab" aria-selected="false" aria-controls="view-changes">What Changed</button>
   </nav>
   <a class="open-link" id="openLink" href="new-design.html" target="_blank" rel="noopener">↗ <span>Open in its own tab</span></a>
 </header>
@@ -82,12 +84,15 @@
           data-src="https://churchillsboxinggym.co.uk/" loading="lazy"></iframe>
   <iframe id="view-new" class="active" title="New Churchill's Boxing Gym design"
           src="new-design.html"></iframe>
+  <iframe id="view-changes" title="What changed in the redesign and why"
+          src="changes.html"></iframe>
 </main>
 
 <script>
   const tabs={
     original:{tab:document.getElementById('tab-original'),frame:document.getElementById('view-original'),href:'https://churchillsboxinggym.co.uk/'},
-    new:{tab:document.getElementById('tab-new'),frame:document.getElementById('view-new'),href:'new-design.html'}
+    new:{tab:document.getElementById('tab-new'),frame:document.getElementById('view-new'),href:'new-design.html'},
+    changes:{tab:document.getElementById('tab-changes'),frame:document.getElementById('view-changes'),href:'changes.html'}
   };
   const openLink=document.getElementById('openLink');
 
@@ -101,13 +106,13 @@
     const f=tabs[key].frame;
     if(f.dataset.src&&!f.src){f.src=f.dataset.src}
     openLink.href=tabs[key].href;
-    if(updateHash)history.replaceState(null,'',key==='original'?'#original':'#new');
+    if(updateHash)history.replaceState(null,'','#'+key);
   }
 
-  tabs.original.tab.addEventListener('click',()=>activate('original'));
-  tabs.new.tab.addEventListener('click',()=>activate('new'));
+  for(const k in tabs){tabs[k].tab.addEventListener('click',()=>activate(k));}
 
-  activate(location.hash==='#original'?'original':'new',false);
+  const initial=location.hash.replace('#','');
+  activate(tabs[initial]?initial:'new',false);
 </script>
 </body>
 </html>
