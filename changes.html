@@ -101,6 +101,16 @@
   .deal h2{color:#fff;margin:10px 0 6px}
   .deal .price{font-family:"Anton";font-size:clamp(2.6rem,6vw,4rem);line-height:1;margin:10px 0 4px}
   .deal .price small{font-family:"Archivo";font-size:1rem;letter-spacing:.02em;color:#dfe5e1}
+  .deal .why{
+    margin:22px 0 2px;padding:20px 22px;border-radius:8px;max-width:640px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  }
+  .deal .why b{
+    display:block;font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;
+    letter-spacing:.16em;font-size:11px;color:#fff;margin-bottom:10px;
+  }
+  .deal .why p{margin:0 0 9px;color:#e6eae7;font-size:.97rem}
+  .deal .why p:last-child{margin-bottom:0}
   .deal ul{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:12px 26px}
   .deal li{display:flex;gap:12px;align-items:flex-start;color:#e6eae7;font-size:.98rem}
   .deal li::before{
@@ -250,6 +260,12 @@
     <span class="eyebrow">The offer</span>
     <h2>Everything above, done</h2>
     <div class="price">£100 <small>one-off</small></div>
+    <div class="why">
+      <b>Why so cheap?</b>
+      <p>No agency. No middlemen. No markup.</p>
+      <p>I've built my own network of AI agents to write the code, so the build takes minutes instead of days.</p>
+      <p>Need something changed? I push it from my phone. From a train, from the gym, from anywhere. You text it, it's live.</p>
+    </div>
     <ul>
       <li>The finished site is yours, on your own Cloudflare account</li>
       <li>Free hosting, permanently — no monthly fees, ever</li>
