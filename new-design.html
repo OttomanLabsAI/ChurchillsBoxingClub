@@ -276,10 +276,15 @@
     header.nav{backdrop-filter:none;background:rgba(244,242,238,.97)}
     nav.links{
       position:fixed;inset:0;background:var(--paper);
-      flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+      flex-direction:column;justify-content:flex-start;gap:22px;
+      padding:96px 24px 40px;overflow-y:auto;
+      transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
     }
     nav.links.open{transform:translateX(0)}
-    nav.links a{font-size:1.4rem;color:var(--ink)}
+    nav.links a{font-size:1.3rem;color:var(--ink)}
+    /* centre the list when it fits; top-align under the bar and scroll when it doesn't */
+    nav.links a:first-child{margin-top:auto}
+    nav.links a.nav-cta{margin-bottom:auto}
     nav.links .m-only{display:block}
     .nav-cta{font-size:1rem;padding:14px 26px;color:#fff !important}
     .burger{display:flex}
