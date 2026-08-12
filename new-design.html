@@ -7,7 +7,7 @@
 <meta name="description" content="Churchill's Boxing Gym, London. World-class coaches, elite facilities, and a culture where everyone is welcome. Pro and amateur boxing, fitness, and box-fit since 2018.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Archivo+Expanded:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f4f2ee;     /* warm off-white */
@@ -36,7 +36,7 @@
   h1,h2,h3{margin:0;font-weight:400;line-height:.92;letter-spacing:-.01em}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   .eyebrow{
-    font-family:"Archivo Expanded","Archivo",sans-serif;font-weight:700;
+    font-family:"Archivo",system-ui,sans-serif;font-weight:700;
     text-transform:uppercase;letter-spacing:.34em;font-size:12px;color:var(--sage-2);
   }
 
@@ -53,10 +53,10 @@
   .brand{display:flex;align-items:center;gap:13px;z-index:61}
   .brand img{height:48px;width:auto}
   .brand .bt{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:16px;letter-spacing:.06em;line-height:.95;color:var(--ink)}
-  .brand .bt small{display:block;font-family:"Archivo Expanded";font-weight:700;font-size:8.5px;letter-spacing:.34em;color:var(--clay);margin-top:3px}
+  .brand .bt small{display:block;font-family:"Archivo",system-ui,sans-serif;font-weight:700;font-size:8.5px;letter-spacing:.34em;color:var(--clay);margin-top:3px}
   nav.links{display:flex;align-items:center;gap:30px}
   nav.links a{
-    font-family:"Archivo Expanded","Archivo",sans-serif;font-weight:700;text-transform:uppercase;
+    font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;
     font-size:12.5px;letter-spacing:.13em;color:var(--slate);transition:color .2s;position:relative;
   }
   nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--sage);transition:width .25s}
@@ -64,7 +64,7 @@
   nav.links a:hover::after{width:100%}
   .nav-cta{
     background:var(--sage);color:#fff !important;padding:11px 20px;border-radius:3px;
-    font-family:"Archivo Expanded";font-weight:800;letter-spacing:.1em;font-size:12px;
+    font-family:"Archivo",system-ui,sans-serif;font-weight:800;letter-spacing:.1em;font-size:12px;
     transition:background .2s,transform .15s;
   }
   .nav-cta:hover{background:var(--sage-2);transform:translateY(-1px)}
@@ -96,7 +96,7 @@
     text-shadow:0 4px 28px rgba(0,0,0,.45);
   }
   .hero h1 span{display:block}
-  .scroll-cue{position:absolute;left:28px;bottom:20px;z-index:3;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.78);font-family:"Archivo Expanded";font-weight:700;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase}
+  .scroll-cue{position:absolute;left:28px;bottom:20px;z-index:3;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.78);font-family:"Archivo",system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase}
   .scroll-cue .dot{width:7px;height:7px;border-radius:50%;background:#cfd6d1;animation:pulse 1.8s infinite}
   @keyframes pulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
 
@@ -151,7 +151,7 @@
   .stat{flex:1;min-width:120px;border:1px solid var(--line);border-radius:6px;padding:18px 20px;background:var(--mist)}
   .stat b{font-family:"Anton";font-size:2.3rem;display:block;line-height:1;color:var(--ink)}
   .stat b em{font-style:normal;color:var(--sage-2)}
-  .stat small{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--clay)}
+  .stat small{font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--clay)}
 
   /* ---------- CLASSES ---------- */
   .classes{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -167,7 +167,7 @@
   .class-card .num{font-family:"Anton";font-size:1rem;color:var(--slate-dim);letter-spacing:.1em}
   .class-card h3{font-family:"Anton";text-transform:uppercase;font-size:1.85rem;margin:18px 0 12px;line-height:.95;color:var(--ink)}
   .class-card p{color:var(--slate);font-size:.96rem;margin:0}
-  .class-card .tag{margin-top:18px;font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:var(--clay)}
+  .class-card .tag{margin-top:18px;font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:var(--clay)}
 
   /* ---------- COACHES / FIGHTERS ---------- */
   .coaches{background:var(--paper)}
@@ -176,7 +176,7 @@
   .coach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .coach{border:1px solid var(--line);border-radius:7px;padding:26px 24px;background:var(--mist);transition:transform .25s,border-color .25s,box-shadow .25s}
   .coach:hover{transform:translateY(-4px);border-color:rgba(127,140,133,.55);box-shadow:0 18px 36px -28px rgba(47,51,56,.45)}
-  .coach .role{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--sage-2);margin-bottom:10px}
+  .coach .role{font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--sage-2);margin-bottom:10px}
   .coach h3{font-family:"Anton";text-transform:uppercase;font-size:1.5rem;line-height:.95;margin-bottom:8px;color:var(--ink)}
   .coach p{color:var(--slate);font-size:.92rem;margin:0}
   .coach .accolade{margin-top:10px;color:var(--clay);font-size:.86rem;font-weight:600}
@@ -220,7 +220,7 @@
   .contact{background:var(--paper);border-top:1px solid var(--line)}
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,80px)}
   .info-block{margin-bottom:30px}
-  .info-block .lbl{font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--sage-2);margin-bottom:10px}
+  .info-block .lbl{font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--sage-2);margin-bottom:10px}
   .info-block p{margin:0;font-size:1.12rem;line-height:1.5;color:var(--slate)}
   .info-block strong{font-family:"Anton";font-weight:400;font-size:1.35rem;letter-spacing:.02em;display:block;margin-bottom:4px;color:var(--ink)}
   .hours-line{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:11px 0;max-width:360px}
@@ -230,10 +230,10 @@
   .map-link:hover{border-color:var(--sage);box-shadow:0 18px 36px -26px rgba(47,51,56,.5)}
   .map-link img{width:100%;height:auto}
   .map-link .pin{position:absolute;inset:0;display:grid;place-items:center;background:rgba(47,51,56,.1)}
-  .map-link .pin span{background:var(--sage);color:#fff;padding:10px 18px;border-radius:4px;font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;box-shadow:0 8px 24px rgba(47,51,56,.4)}
+  .map-link .pin span{background:var(--sage);color:#fff;padding:10px 18px;border-radius:4px;font-family:"Archivo",system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;box-shadow:0 8px 24px rgba(47,51,56,.4)}
 
   form{display:flex;flex-direction:column;gap:16px}
-  form .field label{display:block;font-family:"Archivo Expanded";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;color:var(--slate-dim);margin-bottom:7px}
+  form .field label{display:block;font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;color:var(--slate-dim);margin-bottom:7px}
   form input,form textarea{
     width:100%;background:var(--paper);border:1px solid var(--line);border-radius:5px;color:var(--ink);
     padding:14px 16px;font-family:"Archivo",sans-serif;font-size:1rem;transition:border-color .2s,background .2s,box-shadow .2s;
@@ -246,7 +246,7 @@
 
   .btn{
     display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:0;
-    font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+    font-family:"Archivo",system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
     font-size:13.5px;padding:16px 30px;border-radius:3px;transition:transform .15s,background .2s,color .2s,border-color .2s,box-shadow .2s;
   }
   .btn-primary{background:var(--sage);color:#fff;box-shadow:0 10px 22px -12px rgba(127,140,133,.7)}
@@ -260,9 +260,9 @@
   .foot-brand{display:flex;align-items:center;gap:14px}
   .foot-brand img{height:64px;filter:brightness(0) invert(1) opacity(.9)}
   .foot-brand .ft{font-family:"Anton";text-transform:uppercase;font-size:1.3rem;line-height:.95;color:#fff}
-  .foot-brand .ft small{display:block;font-family:"Archivo Expanded";font-weight:700;font-size:9px;letter-spacing:.3em;color:var(--clay);margin-top:5px}
+  .foot-brand .ft small{display:block;font-family:"Archivo",system-ui,sans-serif;font-weight:700;font-size:9px;letter-spacing:.3em;color:var(--clay);margin-top:5px}
   .foot-links{display:flex;gap:46px;flex-wrap:wrap}
-  .foot-col h4{font-family:"Archivo Expanded";font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--clay);margin:0 0 14px}
+  .foot-col h4{font-family:"Archivo",system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--clay);margin:0 0 14px}
   .foot-col a,.foot-col p{display:block;color:#aeb2b4;font-size:.95rem;margin:0 0 9px;transition:color .2s}
   .foot-col a:hover{color:#fff}
   .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);color:#9499a0;font-size:.84rem}
