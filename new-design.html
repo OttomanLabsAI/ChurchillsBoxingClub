@@ -58,6 +58,7 @@
   nav.links a{
     font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;
     font-size:12.5px;letter-spacing:.13em;color:var(--slate);transition:color .2s;position:relative;
+    white-space:nowrap;
   }
   nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--sage);transition:width .25s}
   nav.links a:hover{color:var(--ink)}
@@ -272,6 +273,13 @@
   .reveal.in{opacity:1;transform:none}
 
   /* ---------- RESPONSIVE ---------- */
+  /* seven links no longer fit alongside the wordmark: tighten, then go burger */
+  @media(max-width:1180px){
+    .brand .bt{display:none}
+    nav.links{gap:18px}
+    nav.links a{font-size:11.5px;letter-spacing:.1em}
+    .nav-cta{padding:10px 16px}
+  }
   @media(max-width:980px){
     .victory-grid,.contact-grid{grid-template-columns:1fr}
     .intro .wrap{grid-template-columns:1fr;gap:18px}
@@ -284,12 +292,11 @@
     .media-stack{margin-top:30px}
     .fight-grid{grid-template-columns:1fr}
     .fight-cta{flex-direction:row;flex-wrap:wrap}
-  }
-  @media(max-width:720px){
-    .hero{margin-top:66px;height:auto;min-height:70vh;max-height:none}
+    /* burger menu takes over from here down */
     /* backdrop-filter on the bar would make it the containing block for the
        fixed-position menu, pinning the sheet inside the bar — so no blur here */
     header.nav{backdrop-filter:none;background:rgba(244,242,238,.97)}
+    .brand .bt{display:flex;flex-direction:column}
     nav.links{
       position:fixed;inset:0;background:var(--paper);
       flex-direction:column;justify-content:flex-start;gap:22px;
@@ -297,7 +304,7 @@
       transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
     }
     nav.links.open{transform:translateX(0)}
-    nav.links a{font-size:1.3rem;color:var(--ink)}
+    nav.links a{font-size:1.3rem;color:var(--ink);letter-spacing:.13em}
     /* centre the list when it fits; top-align under the bar and scroll when it doesn't */
     nav.links a:first-child{margin-top:auto}
     nav.links a.nav-cta{margin-bottom:auto}
@@ -307,6 +314,9 @@
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+  @media(max-width:720px){
+    .hero{margin-top:66px;height:auto;min-height:70vh;max-height:none}
     .class-grid{grid-template-columns:1fr}
     .class-card{border-right:0}
     .stat{min-width:100%}

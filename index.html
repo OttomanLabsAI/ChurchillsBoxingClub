@@ -59,9 +59,12 @@
     width:1px;min-width:100%;height:100%;
   }
   .views iframe.active{display:block}
+  /* below this the centred tabs would collide with the label */
+  @media(max-width:1080px){
+    .bar .brand span{display:none}
+  }
   @media(max-width:640px){
     .bar{gap:10px;padding:0 12px}
-    .bar .brand span{display:none}
     .open-link span{display:none}
     .tab{padding:9px 10px;font-size:10px;letter-spacing:.08em;white-space:nowrap}
   }
