@@ -1,4 +1,4 @@
-7# Churchill's Boxing Club
+# Churchill's Boxing Club
 
 The website for Churchill's Boxing Gym — 15 Newport Street, London, SE11 6AJ. Est. 2018. *We will never surrender.*
 
