@@ -16,9 +16,9 @@
     --ink:#2f3338;
     --slate:#5a5f66;
     --slate-dim:#878d93;
-    --sage:#7f8c85;
-    --sage-2:#6d7a72;
-    --clay:#a4937e;
+    --accent:#b32d23;
+    --accent-2:#8f2118;
+    --clay:#8a6a2e;
     --line:rgba(47,51,56,.13);
     --maxw:980px;
   }
@@ -31,7 +31,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .eyebrow{
     font-family:"Archivo",system-ui,sans-serif;font-weight:700;
-    text-transform:uppercase;letter-spacing:.3em;font-size:11.5px;color:var(--sage-2);
+    text-transform:uppercase;letter-spacing:.3em;font-size:11.5px;color:var(--accent-2);
   }
   h1,h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;margin:0}
   h1{font-size:clamp(2.1rem,6vw,4.2rem)}
@@ -48,7 +48,7 @@
     background:var(--mist);border:1px solid var(--line);border-radius:8px;
     padding:26px 24px;text-align:center;
   }
-  .glance b{font-family:"Anton";font-weight:400;font-size:2.1rem;display:block;line-height:1;color:var(--sage-2);margin-bottom:10px}
+  .glance b{font-family:"Anton";font-weight:400;font-size:2.1rem;display:block;line-height:1;color:var(--accent-2);margin-bottom:10px}
   .glance small{
     font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;
     letter-spacing:.14em;font-size:10.5px;color:var(--clay);display:block;margin-bottom:10px;
@@ -70,14 +70,14 @@
   }
   .cell.old{background:var(--mist);color:var(--slate)}
   .cell.old .mark{background:var(--fog);color:var(--slate-dim)}
-  .cell.new{background:var(--paper);border-top:3px solid var(--sage)}
-  .cell.new .mark{background:var(--sage);color:#fff}
+  .cell.new{background:var(--paper);border-top:3px solid var(--accent)}
+  .cell.new .mark{background:var(--accent);color:#fff}
   .cell .lbl{
     display:block;font-family:"Archivo",system-ui,sans-serif;font-weight:700;text-transform:uppercase;
     letter-spacing:.16em;font-size:9.5px;margin-bottom:4px;
   }
   .cell.old .lbl{color:var(--slate-dim)}
-  .cell.new .lbl{color:var(--sage-2)}
+  .cell.new .lbl{color:var(--accent-2)}
   .cell p{margin:0;font-size:.98rem}
   .cell.new p{color:var(--ink);font-weight:500}
 
@@ -85,7 +85,7 @@
   .wins{display:grid;grid-template-columns:1fr;gap:16px}
   .win{border:1px solid var(--line);border-radius:8px;padding:26px 24px;background:var(--paper)}
   .win .ico{
-    width:44px;height:44px;border-radius:50%;background:var(--sage);color:#fff;
+    width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;
     display:grid;place-items:center;margin-bottom:16px;
   }
   .win .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -95,13 +95,13 @@
   /* the offer */
   .deal{
     margin:clamp(44px,7vw,80px) 0 0;border-radius:10px;overflow:hidden;
-    background:linear-gradient(150deg,#7f8c85,#525c56);color:#fff;
+    background:linear-gradient(150deg,#b32d23,#6d1810);color:#fff;
     padding:clamp(32px,5vw,52px);
   }
-  .deal .eyebrow{color:#dfe5e1}
+  .deal .eyebrow{color:#f2d6d2}
   .deal h2{color:#fff;margin:10px 0 6px}
   .deal .price{font-family:"Anton";font-size:clamp(2.6rem,6vw,4rem);line-height:1;margin:10px 0 4px}
-  .deal .price small{font-family:"Archivo";font-size:1rem;letter-spacing:.02em;color:#dfe5e1}
+  .deal .price small{font-family:"Archivo";font-size:1rem;letter-spacing:.02em;color:#f2d6d2}
   .deal .why{
     margin:22px 0 2px;padding:20px 22px;border-radius:8px;max-width:720px;
     background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
@@ -110,10 +110,10 @@
     display:block;font-family:"Archivo",system-ui,sans-serif;font-weight:800;text-transform:uppercase;
     letter-spacing:.16em;font-size:11px;color:#fff;margin-bottom:10px;
   }
-  .deal .why p{margin:0 0 9px;color:#e6eae7;font-size:.97rem}
+  .deal .why p{margin:0 0 9px;color:#f4dedb;font-size:.97rem}
   .deal .why p:last-child{margin-bottom:0}
   .deal ul{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:12px 26px;max-width:720px}
-  .deal li{display:flex;gap:12px;align-items:flex-start;color:#e6eae7;font-size:.98rem}
+  .deal li{display:flex;gap:12px;align-items:flex-start;color:#f4dedb;font-size:.98rem}
   .deal li::before{
     content:"✓";flex:0 0 auto;width:22px;height:22px;border-radius:50%;
     background:rgba(255,255,255,.18);display:grid;place-items:center;
@@ -121,7 +121,7 @@
   }
   .deal .after{
     margin:26px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);
-    color:#e6eae7;font-size:.98rem;max-width:720px;
+    color:#f4dedb;font-size:.98rem;max-width:720px;
   }
   .deal .after strong{color:#fff}
 
@@ -142,7 +142,7 @@
   /* what can come next */
   .grow{display:grid;grid-template-columns:1fr;gap:16px}
   .grow .g{border:1px solid var(--line);border-radius:8px;padding:22px 24px;background:var(--mist)}
-  .grow b{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:1.2rem;display:block;margin-bottom:8px;color:var(--sage-2)}
+  .grow b{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:1.2rem;display:block;margin-bottom:8px;color:var(--accent-2)}
   .grow p{margin:0;color:var(--slate);font-size:.94rem}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -155,7 +155,7 @@
     .glance,.wins{grid-template-columns:repeat(3,1fr)}
     .grow{grid-template-columns:repeat(2,1fr)}
     .row{grid-template-columns:1fr 1fr}
-    .cell.new{border-top:0;border-left:3px solid var(--sage)}
+    .cell.new{border-top:0;border-left:3px solid var(--accent)}
     .deal ul{grid-template-columns:repeat(2,1fr)}
   }
 </style>
